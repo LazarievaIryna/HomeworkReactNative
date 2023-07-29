@@ -1,11 +1,31 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+// import { StatusBar } from 'expo-status-bar';
+import React from 'react';
+import { useFonts } from 'expo-font';
+import * as SplashScreen from "expo-splash-screen";
+import { useCallback } from 'react';
+import { StyleSheet, View } from 'react-native';
+import RegistrationScreen from './Screens/RegistrationScreen';
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    'Roboto-Medium': require("./assets/fonts/Roboto-Medium.ttf"),
+    'Roboto-Regular': require("./assets/fonts/Roboto-Regular.ttf"),
+    'Roboto-Bold': require("./assets/fonts/Roboto-Bold.ttf"),
+  });
+  const onLayoutRootView = useCallback(async () => {
+    if (fontsLoaded) {
+      await SplashScreen.hideAsync();
+    }
+  }, [fontsLoaded]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View style={styles.container} onLayout={onLayoutRootView}>
+    
+      <RegistrationScreen/>
+    
     </View>
   );
 }
@@ -14,7 +34,9 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // position:'relative'
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
+  
 });
