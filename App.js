@@ -1,10 +1,12 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useFonts } from 'expo-font';
+import store from './redux/store';
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from 'react';
 import { StyleSheet, View } from 'react-native';
-import RegistrationScreen from './Screens/RegistrationScreen';
+
+import Routes from './Routes';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,11 +24,15 @@ export default function App() {
     return null;
   }
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
     
-      <RegistrationScreen/>
     
-    </View>
+    <Provider store={store}>
+      <View style={styles.container} onLayout={onLayoutRootView}>
+      <Routes />
+      </View>
+    </Provider>
+    
+   
   );
 }
 
