@@ -10,6 +10,7 @@ import { getIsUserLogin } from './redux/selectors';
 export default function Routes() {
   const dispatch = useDispatch();
   const userAuthorization = useSelector(getIsUserLogin);
+  console.log(userAuthorization)
  
   const routing = useRoute(userAuthorization);
 
@@ -18,5 +19,5 @@ export default function Routes() {
   }, []);
 
 
-  return <NavigationContainer>{routing}</NavigationContainer>;
+  return (<NavigationContainer>{routing}</NavigationContainer>);
 }

@@ -26,7 +26,7 @@ const LoginScreen = ({ navigation }) => {
   const [isShowKeyboard, setIsShowKeyboard] = useState(false);
   const [isFocusMail, setIsFocusMail] = useState(false);
   const [isFocusPassword, setIsFocusPassword] = useState(false);
-
+// console.log(value)
   const dispatch = useDispatch();
 
   const keyboardHide = () => {
@@ -38,6 +38,7 @@ const LoginScreen = ({ navigation }) => {
     dispatch(logIn(value));
     setValue(initValue);
   };
+
 
   return (
     <TouchableWithoutFeedback onPress={keyboardHide}>
@@ -143,8 +144,8 @@ const styles = StyleSheet.create({
 
   formTitle: {
     fontSize: 30,
-    fontStyle: 'bold',
-    // fontFamily: 'Roboto-Bold',
+    // fontStyle: 'bold',
+    fontFamily: 'Roboto-Bold',
     justifyContent: 'center',
     textAlign: 'center',
     marginBottom: 33,

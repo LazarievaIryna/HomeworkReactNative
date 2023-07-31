@@ -50,7 +50,7 @@ const ProfileScreen = ({ navigation }) => {
         <View style={styles.profileContainer}>
           <Image
             style={styles.profilePhoto}
-            source={require('../../images/profilePhoto.jpg')}
+            source={require('../assets/images/avatar.jpg')}
           />
           <View style={styles.profileInfo}>
             <Text style={styles.profileName}>{login}</Text>
@@ -115,7 +115,8 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 30,
     lineHeight: 35,
-    fontWeight: 'bold',
+    // fontWeight: 'bold',
+    fontFamily: "Roboto-Bold",
   },
   profileMail: {
     fontSize: 16,

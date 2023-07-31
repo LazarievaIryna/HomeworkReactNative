@@ -4,6 +4,7 @@ import { getFirestore } from 'firebase/firestore';
 const firebaseConfig = {
     apiKey: "AIzaSyBgJ0Ad1Djh4p_l8XpFzlnuKIt2qkn5o4E",
     authDomain: "reactnativehomework.firebaseapp.com",
+    databaseURL: "https://reactnativehomework-default-rtdb.europe-west1.firebasedatabase.app/",
     projectId: "reactnativehomework",
     storageBucket: "reactnativehomework.appspot.com",
     messagingSenderId: "792422131881",

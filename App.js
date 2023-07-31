@@ -1,6 +1,7 @@
 // import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { useFonts } from 'expo-font';
+import { Provider } from 'react-redux';
 import store from './redux/store';
 import * as SplashScreen from "expo-splash-screen";
 import { useCallback } from 'react';

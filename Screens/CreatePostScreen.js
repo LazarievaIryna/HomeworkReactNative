@@ -35,7 +35,7 @@ import { getUserData } from '../redux/selectors';
 
 //============= Component
 const CreatePostScreen = ({ navigation }) => {
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
   const [image, setImage] = useState('');
   const [permission, requestPermission] = Camera.useCameraPermissions();
   const [cameraRef, setCameraRef] = useState(null);
@@ -113,14 +113,14 @@ const CreatePostScreen = ({ navigation }) => {
 
   const handlePublish = async () => {
     try {
-      setLoading(true);
+      // setLoading(true);
 
       await addPostToServer();
 
       setImage('');
       setTitle('');
       setLocationTitle('');
-      setLoading(false);
+      // setLoading(false);
 
       navigation.navigate('Пости');
     } catch (error) {
@@ -186,7 +186,7 @@ const CreatePostScreen = ({ navigation }) => {
           }}
         />
         <TouchableOpacity
-          disabled={!title || !locationTitle || !image || loading}
+          disabled={!title || !locationTitle || !image}
           style={{
             ...styles.uploadButton,
             ...(image && title && locationTitle
@@ -202,7 +202,7 @@ const CreatePostScreen = ({ navigation }) => {
                 : styles.disabledText
             }
           >
-            {loading ? 'Завантажується...' : 'Опублікувати'}
+           Опублікувати
           </Text>
         </TouchableOpacity>
       </KeyboardAvoidingView>
